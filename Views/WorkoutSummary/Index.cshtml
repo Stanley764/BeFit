@@ -1,0 +1,33 @@
+@model IEnumerable<BeFit.ViewModels.WorkoutSummaryViewModel>
+
+@{
+    ViewData["Title"] = "Podsumowanie treningów";
+}
+
+<h1>Podsumowanie ostatnich 4 tygodni</h1>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.Id)</th>
+        <th>@Html.DisplayNameFor(model => model.ExerciseName)</th>
+        <th>@Html.DisplayNameFor(model => model.TotalSessionCount)</th>
+        <th>@Html.DisplayNameFor(model => model.TotalReps)</th>
+        <th>@Html.DisplayNameFor(model => model.AverageWeight)</th>
+        <th>@Html.DisplayNameFor(model => model.PeakWeight)</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.Id)</td>
+            <td>@Html.DisplayFor(modelItem => item.ExerciseName)</td>
+            <td>@Html.DisplayFor(modelItem => item.TotalSessionCount)</td>
+            <td>@Html.DisplayFor(modelItem => item.TotalReps)</td>
+            <td>@Html.DisplayFor(modelItem => item.AverageWeight)</td>
+            <td>@Html.DisplayFor(modelItem => item.PeakWeight)</td>
+        </tr>
+    }
+    </tbody>
+</table>
